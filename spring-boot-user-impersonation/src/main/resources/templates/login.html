@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <body>
+        <strong data-th-if="${param.error}">Invalid username and password.</strong>
+        <strong data-th-if="${param.logout}">You have been logged out.</strong>
+        <form data-th-action="@{/login}" method="post">
+            <label for="username">Username:</label><input id="username" type="text" name="username"/>
+            <label for="password">Password:</label><input id="password" type="text" name="password"/>
+            <input type="submit" value="Login"/>
+        </form>
+    </body>
+</html>

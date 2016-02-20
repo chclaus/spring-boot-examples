@@ -1,2 +1,2 @@
-# spring-boot-pid
-An example project for PID generation with spring-boot. 
+# spring-boot-user-impersonation
+An example project to show user impersonation with spring-boot. 
