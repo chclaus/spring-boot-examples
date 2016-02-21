@@ -66,7 +66,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     switchUserFilter.setSwitchUserUrl("/impersonate/login");
     switchUserFilter.setExitUserUrl("/impersonate/logout");
     switchUserFilter.setSuccessHandler((request, response, authentication) -> response.sendRedirect("/user"));
-    switchUserFilter.setFailureHandler((request, response, authentication) -> response.sendRedirect("/admin"));
+    switchUserFilter.setFailureHandler((request, response, authentication) -> response.sendRedirect("/user"));
 
     return switchUserFilter;
   }
