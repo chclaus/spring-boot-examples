@@ -3,7 +3,7 @@
       xmlns:sec="http://www.springframework.org/security/tags">
 
 <body>
-    <h1 data-th-text="${#authentication.principal.username}">[username]</h1>
+    <h1 sec:authentication="name">[username]</h1>
 
     <div sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_PREVIOUS_ADMINISTRATOR')">
         Very secret user information which is just visible for admins!
