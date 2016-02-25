@@ -4,6 +4,7 @@ import org.hibernate.annotations.Where;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * A simple user representation with a username and password.
@@ -11,6 +12,7 @@ import javax.persistence.Entity;
  * @author Christian Claus (ch.claus@me.com)
  */
 @Entity
+@Table(name = "t_user")
 @Where(clause = "is_deleted='false'")
 public class User extends BaseEntity {
 
