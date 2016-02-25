@@ -47,6 +47,7 @@ public class MappedSupertypeTest {
 
 		assertEquals("foo", dbUser.getUsername());
 		assertEquals("bar", dbUser.getPassword());
+		assertEquals(Boolean.FALSE, dbUser.getDeleted());
 
 		// Check if id was set
 		assertNotNull(dbUser.getId());
@@ -73,6 +74,11 @@ public class MappedSupertypeTest {
 
 		// Check if the version has changed
 		assertTrue((dbUser.getVersion().intValue() + 1) == updatedDbUser.getVersion().intValue());
+
+		updatedDbUser.setDeleted(true);
+		userRepository.saveAndFlush(updatedDbUser);
+
+		assertEquals(0, userRepository.count());
 	}
 
 	private Timestamp now() {

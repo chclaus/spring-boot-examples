@@ -1,5 +1,7 @@
 package de.chclaus.example.domain;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
@@ -9,6 +11,7 @@ import javax.persistence.Entity;
  * @author Christian Claus (ch.claus@me.com)
  */
 @Entity
+@Where(clause = "is_deleted='false'")
 public class User extends BaseEntity {
 
   @Column(length = 100)
