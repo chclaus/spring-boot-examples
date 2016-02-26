@@ -7,3 +7,4 @@ An example project for a very useful mapped supertype jpa entity with automatic 
 - Last modified by
 - A version identifier
 
+It's the demo project for my blog post at http://chclaus.de/2016/02/25/jpa-mapped-superclass-meets-spring-data/
