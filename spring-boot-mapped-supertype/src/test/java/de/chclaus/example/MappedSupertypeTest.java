@@ -47,7 +47,7 @@ public class MappedSupertypeTest {
 
 		assertEquals("foo", dbUser.getUsername());
 		assertEquals("bar", dbUser.getPassword());
-		assertEquals(Boolean.FALSE, dbUser.getDeleted());
+		assertEquals(false, dbUser.isDeleted());
 
 		// Check if id was set
 		assertNotNull(dbUser.getId());

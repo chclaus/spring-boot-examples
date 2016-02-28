@@ -42,8 +42,8 @@ public abstract class BaseEntity implements Serializable {
   @LastModifiedBy
   private String lastModifiedBy;
 
-  @Column(name = "is_deleted")
-  private Boolean deleted = Boolean.FALSE;
+  @Column(name = "deleted")
+  private boolean deleted = false;
 
   public Integer getId() {
     return id;
@@ -93,11 +93,11 @@ public abstract class BaseEntity implements Serializable {
     this.lastModifiedBy = lastModifiedBy;
   }
 
-  public Boolean getDeleted() {
+  public boolean isDeleted() {
     return deleted;
   }
 
-  public void setDeleted(Boolean deleted) {
+  public void setDeleted(boolean deleted) {
     this.deleted = deleted;
   }
 }

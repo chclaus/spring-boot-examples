@@ -1,5 +1,6 @@
 package de.chclaus.example.domain;
 
+import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.Column;
@@ -13,7 +14,8 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "t_user")
-@Where(clause = "is_deleted='false'")
+@Where(clause = "deleted='false'")
+@SQLDelete(sql = "UPDATE t_user SET deleted = true WHERE id = ? and version = ?")
 public class User extends BaseEntity {
 
   @Column(length = 100)
