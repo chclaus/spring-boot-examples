@@ -1,11 +1,3 @@
-# spring-boot-mapped-supertype
-An example project for a very useful mapped supertype jpa entity with automatic generation of:
-
-- Creation date
-- Last modification date
-- Created by
-- Last modified by
-- A version identifier
-
-It's the demo project for my blog posts at http://chclaus.de/2016/02/25/jpa-mapped-superclass-meets-spring-data/
-and http://chclaus.de/2016/02/27/soft-delete-with-spring-data/.
+# spring-boot-jpa-optimistic-locking
+An example project to demonstrate optimistic locking with java (jpa). The spring-boot setup 
+is just used to wrap all together with a few lines of code. 
