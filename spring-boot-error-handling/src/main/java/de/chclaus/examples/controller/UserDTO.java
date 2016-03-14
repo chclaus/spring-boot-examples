@@ -9,6 +9,14 @@ public class UserDTO implements Serializable {
 
   private String username;
 
+  public UserDTO() {
+    // Empty for deserialization
+  }
+
+  public UserDTO(String username) {
+    this.username = username;
+  }
+
   public String getUsername() {
     return username;
   }
