@@ -1,4 +1,4 @@
-package de.chclaus.examples.controller;
+package de.chclaus.examples.controller.user;
 
 import java.io.Serializable;
 
