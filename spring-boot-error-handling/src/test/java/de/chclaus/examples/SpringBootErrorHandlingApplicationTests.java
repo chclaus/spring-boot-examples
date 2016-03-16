@@ -31,7 +31,10 @@ public class SpringBootErrorHandlingApplicationTests {
 
 	@Test
 	public void testLoadUser() throws Exception {
+		// Loads the user information for the user admin and expects a http status 200.
 		mockMvc.perform(get("/user/admin")).andExpect(status().isOk());
+
+		// Fails while loading the user information for the user 'foo' and expects a http status 400.
 		mockMvc.perform(get("/user/foo")).andExpect(status().isBadRequest());
 	}
 
