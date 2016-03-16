@@ -40,7 +40,11 @@ public class ErrorControllerAdvice {
       String errorMessage = (String) req.getAttribute(RequestDispatcher.ERROR_MESSAGE);
       MDC.put("error", errorMessage);
 
-      LOG.warn("An error occured:" + exception.getMessage(), exception);
+      if (exception.getCause() != null) {
+        LOG.warn("An error occured: " + exception.getMessage(), exception);
+      } else {
+        LOG.warn("An error occured: " + exception.getMessage());
+      }
 
       Class<?> responseStatusAnnotation = AnnotationUtils.findAnnotationDeclaringClass(ResponseStatus.class, exception.getClass());
       if (responseStatusAnnotation != null && responseStatusAnnotation.getAnnotations().length > 0) {
