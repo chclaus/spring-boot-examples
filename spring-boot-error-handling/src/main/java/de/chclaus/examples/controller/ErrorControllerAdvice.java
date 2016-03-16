@@ -16,6 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * An advisor that assists all known controllers.
+ *
  * @author Christian Claus (ch.claus@me.com)
  */
 @ControllerAdvice
@@ -23,6 +25,13 @@ public class ErrorControllerAdvice {
 
   private static final Logger LOG = LoggerFactory.getLogger(ErrorControllerAdvice.class);
 
+  /**
+   * This method handles all known exceptions.
+   * @param req the http request.
+   * @param resp the http response.
+   * @param exception the thrown exception.
+   * @return a response with an error entity.
+   */
   @ExceptionHandler(Exception.class)
   @ResponseBody
   public ResponseEntity<ErrorDTO> error(HttpServletRequest req, HttpServletResponse resp, Exception exception) {
@@ -52,6 +61,9 @@ public class ErrorControllerAdvice {
   }
 
 
+  /**
+   * A representation of an error.
+   */
   public static class ErrorDTO {
     private String message;
 
