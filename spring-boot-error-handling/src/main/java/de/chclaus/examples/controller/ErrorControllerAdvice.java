@@ -40,12 +40,14 @@ public class ErrorControllerAdvice {
       String errorMessage = (String) req.getAttribute(RequestDispatcher.ERROR_MESSAGE);
       MDC.put("error", errorMessage);
 
+      // The complete Stacktrace should just be logged if there is another cause.
       if (exception.getCause() != null) {
         LOG.warn("An error occured: " + exception.getMessage(), exception);
       } else {
         LOG.warn("An error occured: " + exception.getMessage());
       }
 
+      // Determines an eventually response code and a reason, annotated at the exception class itself.
       Class<?> responseStatusAnnotation = AnnotationUtils.findAnnotationDeclaringClass(ResponseStatus.class, exception.getClass());
       if (responseStatusAnnotation != null && responseStatusAnnotation.getAnnotations().length > 0) {
         ResponseStatus responseStatus = (ResponseStatus) responseStatusAnnotation.getAnnotations()[0];
